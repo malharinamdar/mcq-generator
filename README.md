@@ -1,3 +1,3 @@
 # mcq-generator    
-using the popular T5 encoder-decoder transformer based model, along with
+using the T5 encoder-decoder transformer based model for question generation, along with
 BERT for the text analysis.
