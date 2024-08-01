@@ -3,7 +3,7 @@ import google.generativeai as genai
 import fitz  # PyMuPDF
 
 # Configure Google Gemini API
-GOOGLE_API_KEY = "API_KEY"
+GOOGLE_API_KEY = "AIzaSyCr109nLhfwS7ozcKEsO20PldcmWHoxgYA"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 MODEL_CONFIG = {
