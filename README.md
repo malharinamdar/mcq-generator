@@ -15,3 +15,6 @@ but due to constraints I halted that idea for future. Hence, I implemented the i
 LLM model.
 
 I hope to keep updating the webapp with additional features, consistently.
+
+## deployment
+webapp deployed on <a href="https://mcq-generator-web.streamlit.app/">Website</a>
