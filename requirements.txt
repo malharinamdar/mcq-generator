@@ -183,6 +183,7 @@ python-dateutil==2.9.0.post0
 python-json-logger==2.0.7
 python-rake==1.5.0
 pytz==2024.1
+pytesseract
 pywsd==1.2.5
 PyYAML==6.0.1
 pyzmq==25.1.2
