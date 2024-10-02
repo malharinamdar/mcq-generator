@@ -1,6 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
 import fitz  # PyMuPDF
+from PIL import Image
+import pytesseract  # Ensure pytesseract is installed
 
 # Configure Google Gemini API
 GOOGLE_API_KEY = "AIzaSyCr109nLhfwS7ozcKEsO20PldcmWHoxgYA"
@@ -39,8 +41,6 @@ def extract_text_from_file(uploaded_file):
         st.error("Unsupported file type")
         return None
 
-
-
 def generate_mcqs(text, num_mcqs, difficulty):
     prompt = (
         f"Generate {num_mcqs} multiple-choice questions from the following text "
@@ -55,7 +55,7 @@ st.title("MCQ Generator")
 
 num_mcqs = st.number_input("Enter the number of MCQs to generate", min_value=1, max_value=100, value=5)
 difficulty = st.selectbox("Select the difficulty level", ["Easy", "Medium", "Hard"])
-uploaded_file = st.file_uploader("Upload a text file or PDF file", type=["txt", "pdf"])
+uploaded_file = st.file_uploader("Upload a text file, PDF file, or image file", type=["txt", "pdf", "png", "jpeg", "jpg"])
 
 if st.button("Generate MCQs"):
     if uploaded_file is not None:
