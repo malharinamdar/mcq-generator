@@ -31,9 +31,15 @@ def extract_text_from_file(uploaded_file):
         return text
     elif uploaded_file.type == "text/plain":
         return str(uploaded_file.read(), "utf-8")
+    elif uploaded_file.type in ["image/png", "image/jpeg", "image/jpg"]:
+        image = Image.open(uploaded_file)
+        text = pytesseract.image_to_string(image)
+        return text
     else:
         st.error("Unsupported file type")
         return None
+
+
 
 def generate_mcqs(text, num_mcqs, difficulty):
     prompt = (
