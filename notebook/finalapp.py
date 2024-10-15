@@ -4,7 +4,7 @@ import fitz  # PyMuPDF
 from PIL import Image
 import pytesseract 
 
-API_KEY =st.secrets["AIzaSyCr109nLhfwS7ozcKEsO20PldcmWHoxgYA"]
+API_KEY =st.secrets["API_KEY"]
 genai.configure(api_key=API_KEY)
 
 MODEL_CONFIG = {
