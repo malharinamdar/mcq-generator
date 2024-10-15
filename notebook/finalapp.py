@@ -2,9 +2,8 @@ import streamlit as st
 import google.generativeai as genai
 import fitz  # PyMuPDF
 from PIL import Image
-import pytesseract  # Ensure pytesseract is installed
+import pytesseract 
 
-# Configure Google Gemini API
 API_KEY =st.secrets["AIzaSyCr109nLhfwS7ozcKEsO20PldcmWHoxgYA"]
 genai.configure(api_key=API_KEY)
 
