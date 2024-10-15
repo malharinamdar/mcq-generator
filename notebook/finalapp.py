@@ -5,8 +5,8 @@ from PIL import Image
 import pytesseract  # Ensure pytesseract is installed
 
 # Configure Google Gemini API
-GOOGLE_API_KEY = "AIzaSyCr109nLhfwS7ozcKEsO20PldcmWHoxgYA"
-genai.configure(api_key=GOOGLE_API_KEY)
+API_KEY =st.secrets["AIzaSyCr109nLhfwS7ozcKEsO20PldcmWHoxgYA"]
+genai.configure(api_key=API_KEY)
 
 MODEL_CONFIG = {
     "temperature": 0.2,
