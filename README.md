@@ -1,20 +1,36 @@
-# mcq generator webapp using llm
-simple webapp built for generating `multiple choice questions` by analysing a piece of text 
-to be input by the user in `.txt` or `pdf` format.
+# MCQ Generator
 
-The `mcqs` generated can be in varying order of difficulty as per the choice of user,
-`easy`, `medium` or `hard`.
+Turn a PDF, a photo of notes or plain text into a graded multiple-choice quiz.
 
-number of questions are also to be input by the user as per their requirement.
+**Live → [mcq-generator-black.vercel.app](https://mcq-generator-black.vercel.app)**
 
-## structure
-my initial idea to implement this project was with the help of `T5 Transformer` `encoder-decoder`
-and `BERT` `encoder` model, using `NLP` techniques.
+![MCQ Generator](docs/home.webp)
 
-but due to constraints I halted that idea for future. Hence, I implemented the idea using `gemini-1.5-flash`
-LLM model.
+## What it does
 
-I hope to keep updating the webapp with additional features, consistently.
+- **Any source.** Upload a PDF, a PNG, JPEG or WebP image, or a text file, or paste text. Scanned pages and handwritten notes work too.
+- **Grounded questions.** Every question comes from the material, with plausible distractors, an explanation, and a supporting quote from the source.
+- **Take it or print it.** Answer in the browser with instant grading, switch to the answer key, or copy, download (.md) or print the quiz.
+- **Difficulty.** Easy, medium or hard (elementary, high-school or college level), with 1 to 25 questions.
 
-## deployment
-webapp deployed on <a href="https://mcq-generator-web.streamlit.app/">Website</a>
+![Quiz](docs/quiz.webp)
+
+## How it works
+
+The API sends the material to GPT-4.1 mini with a strict JSON schema. The response is validated: exactly four distinct options, one valid answer, no duplicate questions. Options are then shuffled so the correct answer isn't biased toward one letter.
+
+## Stack
+
+Next.js · TypeScript · Tailwind CSS · OpenAI API · Vercel
+
+## Run locally
+
+```bash
+npm install
+echo "OPENAI_API_KEY=sk-..." > .env.local
+npm run dev
+```
+
+---
+
+The original Streamlit version is on the [`legacy-streamlit`](https://github.com/malharinamdar/mcq-generator/tree/legacy-streamlit) branch.
