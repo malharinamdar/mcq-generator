@@ -2,8 +2,6 @@
 
 Turn a PDF, a photo of notes or plain text into a graded multiple-choice quiz.
 
-**Live → [mcq-generator-black.vercel.app](https://mcq-generator-black.vercel.app)**
-
 ![MCQ Generator](docs/home.webp)
 
 ## What it does
